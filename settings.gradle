@@ -1,0 +1,3 @@
+rootProject.name='Curve View Sample'
+include ':app'
+include ':app:curveViewModule'

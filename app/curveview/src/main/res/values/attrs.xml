@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CurveView">
+        <attr name="startColor" format="color" />
+        <attr name="endColor" format="color" />
+
+        <attr name="startColorX" format="float" />
+        <attr name="startColorY" format="float" />
+        <attr name="endColorX" format="float" />
+        <attr name="endColorY" format="float" />
+
+        <attr name="firstControlPointX" format="float" />
+        <attr name="firstControlPointExtraY" format="dimension" />
+        <attr name="secondControlPointX" format="float" />
+        <attr name="secondControlPointExtraY" format="dimension" />
+    </declare-styleable>
+</resources>

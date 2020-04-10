@@ -26,6 +26,32 @@ android {
 }
 
 dependencies {
+
+    /***
+     * in an outer project make sure to follow installation steps which are:
+     *
+     * 1- ADD MAVEN to project level gradle as shown
+     *===========================================
+     * all projects { repositories{
+     *      ...
+     *     maven { url 'https://jitpack.io' }
+     * } }
+     * ==========================================
+     *
+     * 2- ADD DEPENDENCY to module-level gradle
+     * ===============================================================
+     * dependencies {
+     * ...
+     * implementation 'com.github.haytham-c01:CurveView:LATEST_RELEASE
+     * }
+     * ===============================================================
+     *
+     * NOTE: DON'T ADD THE LINE LIKE ME
+     *      * implementation project(':curveview') <- DON'T ADD THIS
+     */
+
+    implementation project(':curveview') // USE "implementation 'com.github.haytham-c01:CurveView:LATEST_RELEASE" INSTEAD
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -35,5 +61,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    //implementation 'com.github.haytham-c01:CurveView:0.1.0'
+
 }

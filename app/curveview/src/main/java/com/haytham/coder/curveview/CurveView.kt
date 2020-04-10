@@ -21,7 +21,6 @@ class CurveView @JvmOverloads constructor(
         const val TAG= "CurvedView"
     }
 
-
     private val paint = Paint().apply {
         isAntiAlias = true
         isDither = true

@@ -1,3 +1,14 @@
+# Curve View
+This view used to draw custom backgrounds that support:
+
+1. curved shapes
+2. gradient colors
+3. shadow of different colors
+
+
+# Example
+<img style="float: right;" src="whatever.jpg">
+```XML
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -54,3 +65,4 @@
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+```

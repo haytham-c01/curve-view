@@ -13,5 +13,8 @@
         <attr name="firstControlPointExtraY" format="dimension" />
         <attr name="secondControlPointX" format="float" />
         <attr name="secondControlPointExtraY" format="dimension" />
+
+        <attr name="curveShadowRadius" format="dimension"/>
+        <attr name="curveShadowColor" format="color"/>
     </declare-styleable>
 </resources>

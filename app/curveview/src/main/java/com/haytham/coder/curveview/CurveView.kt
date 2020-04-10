@@ -25,6 +25,13 @@ class CurveView @JvmOverloads constructor(
         isAntiAlias = true
         isDither = true
     }
+    private val shadowPaint = Paint().apply {
+        color = Color.BLACK
+        style = Paint.Style.FILL
+        maskFilter = BlurMaskFilter(55f, BlurMaskFilter.Blur.OUTER)
+        isAntiAlias = true
+        isDither = true
+    }
     private val path= Path()
 
     @ColorInt
@@ -41,6 +48,7 @@ class CurveView @JvmOverloads constructor(
     private var firstControlPointExtraY:Float=0f
     private var secondControlPointX:Float=0f
     private var secondControlPointExtraY:Float=0f
+    private var shadowRadius= 16f
 
     init {
         context.withStyledAttributes(attrs, R.styleable.CurveView) {
@@ -109,10 +117,7 @@ class CurveView @JvmOverloads constructor(
                 outline.setConvexPath(path)
             }
         }
-
-
     }
-
 
     private operator fun PointF.times(scale:Float) = PointF( x * scale,  y * scale)
     private fun lerp(p0:PointF, p1:PointF, t:Float) =  p0 * (1-t) +  p1 * t
@@ -137,6 +142,7 @@ class CurveView @JvmOverloads constructor(
 
 
     override fun onDraw(canvas: Canvas) {
+        canvas.drawPath(path, shadowPaint)
         canvas.drawPath(path, paint)
         super.onDraw(canvas)
     }

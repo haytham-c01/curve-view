@@ -7,8 +7,9 @@ This view used to draw custom backgrounds that support:
 
 
 # Example
-<img style="float: right;" src="whatever.jpg">
-```XML
+<img align="right" src="exampleImage.png" width="256">
+
+```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -66,3 +67,67 @@ This view used to draw custom backgrounds that support:
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
+# Installation
+1. Add maven to project-level gradle file
+```
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+2. Add the dependency in your module-level gradle file
+```
+dependencies {
+...
+implementation 'com.github.haytham-c01:CurveView:LATEST_RELEASE
+}
+```
+# Attributes
+### Control Points
+These points define the shape of the curve (look for bezier curves to know more...)
+| Name                       | Description                                     | Type                   | Default Value |
+| -------------------------- |------------------------------------------------ | :--------------------: | :-----------: |
+| firstControlPointX         | percentage of first control point x position    |   float(range 0-1)     |  0.4f         |
+| firstControlPointExtraY    | additional height to the first control point    |   dimention  |  0.1f   |  120f         |
+| secondControlPointX        | percentage of second control point x position   |   float(range 0-1)     |  0.5f         |
+| secondControlPointExtraY   | additional height to the second control point   |   dimention            |  -180f        |
+#### NOTE:
+1. in x percentage 0 -> LEFT of the view AND 100 -> RIGHT of the view
+2. in y percentage 0 -> TOP of the view AND 100 -> BOTTOM of the view
+#### TIPS:
+1. extraY value can be negative to produce up curve
+2. setting extraY value for both points to zero will produce straight line
+3. use same values for first and second control points to convert it into a single control point
+### Gradient
+| Name          | Description                           | Type                 | Default Value   |
+| ------------- | ------------------------------------- | :------------------: | :-------------: |
+| startColor    | gradient start color                  |   color              |  Cayn           |
+| startColorX   | percentage of start color x position  |   float(range 0-1)   |  0.1f           |
+| startColorY   | percentage of start color y position  |   float(range 0-1)   |  0.0f           |
+| endColor      | gradient end color                    |   color              |  Yellow         |
+| endColorX     | percentage of end color x position    |   float(range 0-1)   |  0.65f          |
+| endColorY     | percentage of end color y position    |   float(range 0-1)   |  1f             |
+#### NOTE:
+1. in x percentage 0 -> LEFT of the view AND 100 -> RIGHT of the view
+2. in y percentage 0 -> TOP of the view AND 100 -> BOTTOM of the view
+3. use same color for start and end values to get solid (not gradient) background
+### Shadow
+| Name                | Description                         | Type            | Default Value |
+| ------------------- |------------------------------------ | :-------------: | :-----------: |
+| curveShadowRadius   | the shadowRadius of customShadow    |   dimention     |  0f           |
+| curveShadowColor    | shadow color                        |   color         |  Black        |
+#### Important Guide
+There is 2 ways to set shadow
+1. Using elevation, this requires
+    * elevation attr > 0
+    * convex shape (path.isConvex = true)
+2. Using the custom attribute defined above, this requires
+    * curveShadowRadius > 0
+    * android:clipChildren of parent layouts = false
+    
+if both used, material elevation (1st point) will be favored
+

@@ -71,23 +71,23 @@ class CurveView @JvmOverloads constructor(
      *  where 0 -> LEFT of the view AND 100 -> RIGHT of the view
      *  ========================================================
      *
-     *  firstControlPointExtraY: additional height to the first control point
-     *  secondControlPointExtraY: additional height to the second control point
+     *  firstControlPointY: the percentage of the height of first control point in proportion to view height
+     *  secondControlPointY: the percentage of the height of second control point in proportion to view height
      *
      *  where
      *  1) 0 -> TOP of the view AND 100 -> BOTTOM of the view
      *  2) the initial value is equal to the height of view straight middle line
      *
      *  additional tips
-     *  1) extraY value can be negative to produce up curve
-     *  2) setting extraY value for both points to zero will produce straight line
+     *  1) y value can be < 1 to produce up curve, or > 1 to produce up curve
+     *  2) setting y value for both points to One will produce straight line
      *  2) use same values for first and second control points to convert it into a single control point
      */
 
     private var firstControlPointX: Float = 0f
-    private var firstControlPointExtraY: Float = 0f
+    private var firstControlPointY: Float = 0f
     private var secondControlPointX: Float = 0f
-    private var secondControlPointExtraY: Float = 0f
+    private var secondControlPointY: Float = 0f
 
 
     /**
@@ -150,12 +150,12 @@ class CurveView @JvmOverloads constructor(
 
             firstControlPointX =
                 getFloat(R.styleable.CurveView_firstControlPointX, 0.4f).coerceIn(0f, 1f)
-            firstControlPointExtraY =
-                getDimension(R.styleable.CurveView_firstControlPointExtraY, 120f)
+            firstControlPointY =
+                getFloat(R.styleable.CurveView_firstControlPointY, 1.2f).coerceIn(0f, 2f)
             secondControlPointX =
                 getFloat(R.styleable.CurveView_secondControlPointX, 0.5f).coerceIn(0f, 1f)
-            secondControlPointExtraY =
-                getDimension(R.styleable.CurveView_secondControlPointExtraY, -180f)
+            secondControlPointY =
+                getFloat(R.styleable.CurveView_secondControlPointY, 0.8f).coerceIn(0f, 2f)
 
             shadowRadius = getDimension(R.styleable.CurveView_curveShadowRadius, 0f)
             shadowPaint.apply {
@@ -253,8 +253,8 @@ class CurveView @JvmOverloads constructor(
 
         bezierPoints=  listOf(
             PointF(0f, fHeight),
-            PointF(fWidth * firstControlPointX, fHeight + firstControlPointExtraY),
-            PointF(fWidth * secondControlPointX, fHeight + secondControlPointExtraY),
+            PointF(fWidth * firstControlPointX, fHeight * firstControlPointY),
+            PointF(fWidth * secondControlPointX, fHeight * secondControlPointY),
             PointF(fWidth, fHeight)
         )
     }

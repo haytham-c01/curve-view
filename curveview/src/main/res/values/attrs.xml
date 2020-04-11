@@ -10,9 +10,9 @@
         <attr name="endColorY" format="float" />
 
         <attr name="firstControlPointX" format="float" />
-        <attr name="firstControlPointExtraY" format="dimension" />
+        <attr name="firstControlPointY" format="float" />
         <attr name="secondControlPointX" format="float" />
-        <attr name="secondControlPointExtraY" format="dimension" />
+        <attr name="secondControlPointY" format="float" />
 
         <attr name="curveShadowRadius" format="dimension"/>
         <attr name="curveShadowColor" format="color"/>

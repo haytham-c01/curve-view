@@ -3,7 +3,7 @@ This view used to draw custom backgrounds that support:
 
 1. curved shapes
 2. gradient colors
-3. shadow of different colors
+3. shadows of different colors
 
 
 # Example

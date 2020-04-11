@@ -51,13 +51,13 @@ class CurveView @JvmOverloads constructor(
      *  startColorX: the percentage of start color x position
      *  endColorX: the percentage of end color x position
      *
-     *  where 0 -> LEFT of the view AND 100 -> RIGHT of the view
+     *  where 0 -> LEFT of the view, AND 1 -> RIGHT of the view
      *  ========================================================
      *
      *  startColorY: the percentage of start color y position
      *  endColorY: the percentage of end color y position
      *
-     *  where 0 -> TOP of the view AND 100 -> BOTTOM of the view
+     *  where 0 -> TOP of the view, AND 1-> BOTTOM of the view
      */
     private var startColorX: Float = 0f
     private var startColorY: Float = 0f
@@ -68,14 +68,14 @@ class CurveView @JvmOverloads constructor(
      *  firstControlPointX: the percentage of first control point x position
      *  secondControlPointX: the percentage of second control point x position
      *
-     *  where 0 -> LEFT of the view AND 100 -> RIGHT of the view
+     *  where 0 -> LEFT of the view, AND 1 -> RIGHT of the view
      *  ========================================================
      *
      *  firstControlPointY: the percentage of the height of first control point in proportion to view height
      *  secondControlPointY: the percentage of the height of second control point in proportion to view height
      *
      *  where
-     *  1) 0 -> TOP of the view AND 1-> BOTTOM of the view
+     *  1) 0 -> TOP of the view, AND 1-> BOTTOM of the view
      *
      *  additional tips
      *  1) y value can be < 1 to produce up curve, or > 1 to produce up curve

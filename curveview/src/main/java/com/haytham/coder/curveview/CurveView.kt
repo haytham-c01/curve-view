@@ -75,8 +75,7 @@ class CurveView @JvmOverloads constructor(
      *  secondControlPointY: the percentage of the height of second control point in proportion to view height
      *
      *  where
-     *  1) 0 -> TOP of the view AND 100 -> BOTTOM of the view
-     *  2) the initial value is equal to the height of view straight middle line
+     *  1) 0 -> TOP of the view AND 1-> BOTTOM of the view
      *
      *  additional tips
      *  1) y value can be < 1 to produce up curve, or > 1 to produce up curve

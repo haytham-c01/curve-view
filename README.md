@@ -95,7 +95,7 @@ These points define the shape of the curve (look for bezier curves to know more.
 | firstControlPointExtraY    | additional height to the first control point    |   dimention  |  0.1f   |  120f         |
 | secondControlPointX        | percentage of second control point x position   |   float(range 0-1)     |  0.5f         |
 | secondControlPointExtraY   | additional height to the second control point   |   dimention            |  -180f        |
-#### NOTE:
+#### NOTES:
 1. in x percentage 0 -> LEFT of the view AND 100 -> RIGHT of the view
 2. in y percentage 0 -> TOP of the view AND 100 -> BOTTOM of the view
 #### TIPS:
@@ -111,7 +111,7 @@ These points define the shape of the curve (look for bezier curves to know more.
 | endColor      | gradient end color                    |   color              |  Yellow         |
 | endColorX     | percentage of end color x position    |   float(range 0-1)   |  0.65f          |
 | endColorY     | percentage of end color y position    |   float(range 0-1)   |  1f             |
-#### NOTE:
+#### NOTES:
 1. in x percentage 0 -> LEFT of the view AND 100 -> RIGHT of the view
 2. in y percentage 0 -> TOP of the view AND 100 -> BOTTOM of the view
 3. use same color for start and end values to get solid (not gradient) background

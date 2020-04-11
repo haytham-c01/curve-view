@@ -30,9 +30,9 @@ This view used to draw custom backgrounds that support:
         app:endColor="#DE9BE8"
         app:endColorX="0.5"
         app:endColorY="25"
-        app:firstControlPointExtraY="60dp"
+        app:firstControlPointExtraY="1.2"
         app:firstControlPointX="0.4"
-        app:secondControlPointExtraY="-60dp"
+        app:secondControlPointExtraY="0.8"
         app:secondControlPointX="0.6"
         app:curveShadowColor="#DE9BE8"
         app:curveShadowRadius="24dp"
@@ -53,9 +53,9 @@ This view used to draw custom backgrounds that support:
         android:elevation="8dp"
         app:startColor="#FFA78B"
         app:endColor="#FFA78B"
-        app:firstControlPointExtraY="150dp"
+        app:firstControlPointExtraY="1.5"
         app:firstControlPointX="0.4"
-        app:secondControlPointExtraY="150dp"
+        app:secondControlPointExtraY="1.5"
         app:secondControlPointX="0.6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -92,15 +92,15 @@ These points define the shape of the curve (look for bezier curves to know more.
 | Name                       | Description                                     | Type                   | Default Value |
 | -------------------------- |------------------------------------------------ | :--------------------: | :-----------: |
 | firstControlPointX         | percentage of first control point x position    |   float(range 0-1)     |  0.4f         |
-| firstControlPointExtraY    | additional height to the first control point    |   dimention  |  0.1f   |  120f         |
+| firstControlPointY         | percentage of the height of first control point in proportion to view height                                                                                                            |   float(range 0-2)     |  1.2f         |
 | secondControlPointX        | percentage of second control point x position   |   float(range 0-1)     |  0.5f         |
-| secondControlPointExtraY   | additional height to the second control point   |   dimention            |  -180f        |
+| secondControlPointY        | percentage of the height of second control point in proportion to view height                                                                                                            |   float(range 0-2)     |  0.8f         |
 #### NOTES:
-1. in x percentage 0 -> LEFT of the view AND 100 -> RIGHT of the view
-2. in y percentage 0 -> TOP of the view AND 100 -> BOTTOM of the view
+1. in x percentage 0 -> LEFT of the view, AND 1 -> RIGHT of the view
+2. in y percentage 0 -> TOP of the view, AND 1 -> BOTTOM of the view
 #### TIPS:
-1. extraY value can be negative to produce up curve
-2. setting extraY value for both points to zero will produce straight line
+1. y value can be < 1 to produce up curve, or > 1 to produce up curve
+2. setting y value for both points to One will produce straight line
 3. use same values for first and second control points to convert it into a single control point
 ### Gradient
 | Name          | Description                           | Type                 | Default Value   |

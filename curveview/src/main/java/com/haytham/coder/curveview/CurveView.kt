@@ -35,7 +35,7 @@ class CurveView @JvmOverloads constructor(
 
     /**
      * the start color of gradient background
-     * NOTE: use same color for start and end if u want a sold (not gradient) background
+     * NOTE: use same color for start and end if u want a solid (not gradient) background
      */
     @ColorInt
     private var startColor: Int = 0
@@ -179,17 +179,17 @@ class CurveView @JvmOverloads constructor(
     }
 
     /**
-     * elevation shadow is drawn when:
-     * elevation attr > 0 AND path.isConvex= true (the drawn shape is convex)
+     * There is 2 ways to set shadow
+     * 1. Using elevation, this requires
+     *     * elevation attr > 0
+     *     * convex shape (path.isConvex = true)
      *
-     * custom shadow is drawn when:
-     * - curveShadowRadius is > 0
-     * AND
-     * - android:clipChildren attr of parent layouts = false
-     * AND
-     * 1) elevation is 0 or less
-     *       <<OR>>
-     * 2) elevation is not working (when path.isConvex= false)
+     * 2. Using the custom attribute defined above, this requires
+     *     * curveShadowRadius > 0
+     *     * android:clipChildren of parent layouts = false
+     *
+     * if both used, material elevation (1st point) will be favored
+     *
      */
     private fun setupShadow() {
         outlineProvider = if (path.isConvex) {

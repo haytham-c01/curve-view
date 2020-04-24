@@ -83,7 +83,7 @@ allprojects {
 ```
 dependencies {
 ...
-implementation 'com.github.haytham-c01:CurveView:LATEST_RELEASE
+implementation 'com.github.haytham-c01:CurveView:LATEST_RELEASE'
 }
 ```
 # Attributes

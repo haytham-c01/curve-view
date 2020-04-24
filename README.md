@@ -92,9 +92,9 @@ These points define the shape of the curve (look for bezier curves to know more.
 | Name                       | Description                                     | Type                   | Default Value |
 | -------------------------- |------------------------------------------------ | :--------------------: | :-----------: |
 | firstControlPointX         | percentage of first control point x position    |   float(range 0-1)     |  0.4f         |
-| firstControlPointY         | percentage of the height of first control point in proportion to view height                                                                                                            |   float(range 0-2)     |  1.2f         |
+| firstControlPointY         | percentage of the height of first control <br>point in proportion to view height                                                                                                            |   float(range 0-2)     |  1.2f         |
 | secondControlPointX        | percentage of second control point x position   |   float(range 0-1)     |  0.5f         |
-| secondControlPointY        | percentage of the height of second control point in proportion to view height                                                                                                            |   float(range 0-2)     |  0.8f         |
+| secondControlPointY        | percentage of the height of second control <br>point in proportion to view height                                                                                                            |   float(range 0-2)     |  0.8f         |
 #### NOTES:
 1. in x percentage 0 -> LEFT of the view, AND 1 -> RIGHT of the view
 2. in y percentage 0 -> TOP of the view, AND 1 -> BOTTOM of the view

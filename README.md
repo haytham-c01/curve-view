@@ -1,3 +1,4 @@
+[![](https://jitpack.io/v/haytham-c01/CurveView.svg)](https://jitpack.io/#haytham-c01/CurveView)
 # Curve View
 This view used to draw custom backgrounds that support:
 
